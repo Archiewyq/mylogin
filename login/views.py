@@ -14,7 +14,7 @@ def login(request):
         return redirect('/index/')
     if request.method == 'POST':
         login_form = forms.UserForm(request.POST)
-        message = '所有字段都必须填写！'
+        message = ''
         if login_form.is_valid():
             username = login_form.cleaned_data['username']
             password = login_form.cleaned_data['password']
